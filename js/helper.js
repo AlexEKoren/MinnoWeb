@@ -58,9 +58,10 @@ $('#question-submit-button').click(function() {
 			dataType: 'json',
 			data: {name: name, sender: email, question: question},
 			success: function(status) {
-				console.log(status);
+				$('.form-container').fadeOut(250);
+				$('#form-completed').delay(250).fadeIn(250);
 			}, error: function(error) {
-				console.log(error);
+				alert( "Sorry! Something went wrong. Please try again. " );
 			}
 		});
 	}
