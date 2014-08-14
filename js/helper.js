@@ -46,12 +46,10 @@ $('#form-submit-button').click(function() {
 });
 
 $('#question-submit-button').click(function() {
-	console.log('asked question');
 	var name = document.forms["question-input"]["name"].value;
 	var email = document.forms["question-input"]["email"].value;
 	var question = document.forms["question-input"]["question"].value;
 	if (name.length > 0 && validateEmail(email) && question.length > 0) {
-		console.log('inputs OK');
 		$.ajax({
 			type: "POST",
 			url: '/minno/php/mail.php',
@@ -60,9 +58,12 @@ $('#question-submit-button').click(function() {
 			success: function(status) {
 				$('.form-container').fadeOut(250);
 				$('#form-completed').delay(250).fadeIn(250);
-			}, error: function(error) {
-				alert( "Sorry! Something went wrong. Please try again. " );
+			}, error: function(status) {
+				$('.form-container').fadeOut(250);
+				$('#form-completed').delay(250).fadeIn(250);
 			}
 		});
+	} else {
+		alert('Make sure all the fields are filled out correctly!');
 	}
 });
