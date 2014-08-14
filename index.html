@@ -1,0 +1,143 @@
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Minno</title>
+		<meta name="viewport" content="width=device-width initial-scale=1.0">
+		<link rel="stylesheet" href="custom.css" type="text/css">
+		<link rel="stylesheet" href="assets/animate.css" type="text/css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+		
+		<script type="text/javascript">
+			<!--
+			if (screen.width <= 699) {
+			document.location = "mobile.html";
+			}
+			//-->
+		</script>
+	</head>
+	
+	<body>
+		<div id="bubble"></div>
+		<div class="parallax-background">
+	  		<ul id="home-scene" class="scene unselectable"
+				data-friction-x="0.1"
+				data-friction-y="0.1"
+				data-scalar-x="25"
+				data-scalar-y="15">
+			</ul>
+		</div>
+		
+		<div class = "container">
+			
+			<div class = "page" id = "title-page" style = "background-color: rgba(255, 255, 255, .1);">
+				<div class = "title">
+					Minno
+				</div>
+				<div class = "sub-title">
+					A professional in your pocket
+				</div>
+			</div>
+			
+			<div class = "page" id = "user-page" style = "background-color: rgba(255, 255, 255, .05);">
+				<div class = "left sub-page" id = "user-page-left">
+					<div class = "sub-page-title">
+						Instant answers
+					</div>
+					<div class = "sub-page-text">
+						Imagine instant support, from a qualified professional, 
+						for the absolute minimum amount of time necessary to solve your problem. 
+						</br></br>With Minno, live professional consulting is just a tap away.
+					</div>
+				</div>
+				<div class = "right sub-page" id = "user-page-right">
+					<div class = "sub-page-image-holder">
+						<img class = "sub-page-image" src="assets/images/user-image.png"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "page" id = "pro-page" style = "background-color: rgba(255, 255, 255, .08);">
+				<div class = "right sub-page" id = "pro-page-right">
+					<div class = "sub-page-title">
+						Accessible Opportunities
+					</div>
+					<div class = "sub-page-text">
+						Welcome to the new landscape of professional consulting. 
+						Supplement your income by offering your consulting expertise 
+						to Minno users on <i>your</i> own schedule.
+
+					</div>
+				</div>
+				<div class = "left sub-page" id = "pro-page-left">
+					<div class = "sub-page-image-holder">
+						<img class = "sub-page-image" src="assets/images/pro-image.png"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "page" id = "team-page" style = "background-color: rgba(255, 255, 255, .05);">
+				<div class = "left sub-page" id = "team-page-left">
+					<div class = "image-container">
+						<div class = "image-holder" id = "adam-image"></div>
+						<div class = "image-sub-title">
+							Adam Aronovitz
+						</div>
+						<div class = "image-sub-info">
+							<i>Gamifier, Boundless, Insightful, Educator</i> </br> </br> User Expansion and Professional Outreach
+						</div>
+					</div>
+				</div>
+				
+				<div class = "right sub-page" id = "team-page-right">
+					<div class = "image-container">
+						<div class = "image-holder" id = "alex-image"></div>
+						<div class = "image-sub-title">
+							Alex Koren
+						</div>
+						<div class = "image-sub-info">
+							<i>Magnet, Juggler, Explosive, Thinker</i> </br> </br> Product Development
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--<div class = "page" id = "signup-page" style = "background-color: rgba(255, 255, 255, .08);">
+				<div class = "horizontal-sub-title">
+					Pre-Register as a professional
+				</div>
+				<div class = "horizontal-sub-info">
+					Enter your e-mail and we'll get back to you as opportunities to provide services on Minno open up.
+				</div>
+				<div class = "form-container">
+					<form class = "form-input" name = "pro-input">
+						<input class = "text-input" type = "text" name = "name" id = "name-input" placeholder = "Full name"></input>
+						<input class = "text-input" type = "text" name = "email" id = "email-input" placeholder="E-mail"></input>
+						<input class = "text-input" type = "text" name = "skills" id = "skills-input" placeholder= "Areas of expertise"></input>
+						<div class = "button" id = "form-submit-button">
+							<div class = "button-content">
+								Submit!
+							</div>
+						</div>
+					</form>
+				</div>
+				<div id="form-completed">
+					Thanks! We'll be sure to get in touch with you as soon as possible.
+				</div>
+			</div>-->
+			
+		</div>
+		
+		<script src="js/parallax.min.js"></script>
+		<script src="js/bubbles.js"></script>
+		<script src="js/helper.js"></script>
+		
+		<script>
+			var homeScene = document.getElementById('home-scene');
+			var homeParallax = new Parallax(homeScene);
+		</script>
+	</body>
+</html>
