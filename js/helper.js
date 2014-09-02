@@ -27,7 +27,7 @@ $('#form-submit-button').click(function() {
 			type: "POST",
 			url: '/minno/php/alpha.php',
 			dataType: 'json',
-			data: {name: name, sender: email, code:code},
+			data: {name: name, sender: email, code: code},
 			success: function(status) {
 				$('.form-container').fadeOut(250);
 				$('#form-completed').delay(250).fadeIn(250);
