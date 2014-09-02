@@ -19,29 +19,25 @@ function validateEmail(email) {
 }
 
 $('#form-submit-button').click(function() {
-	var name=document.forms["pro-input"]["name"].value;
-	var email=document.forms["pro-input"]["email"].value;
-	var skills=document.forms["pro-input"]["skills"].value;
-	if (name.length > 0 && validateEmail(email) && skills.length > 0) {
+	var name = document.forms["alpha-signup"]["name"].value;
+	var email = document.forms["alpha-signup"]["email"].value;
+	var code = document.forms["alpha-signup"]["referral-code"].value;
+	if (name.length > 0 && validateEmail(email)) {
 		$.ajax({
-			url: "https://docs.google.com/forms/d/1SJ2gNFKm6IYl50a7YuprxAxNtgVm_5356C6uhefbGQA/formResponse",
-			data: {"entry.129792090" : name, "entry.1353641674" : email, "entry.755351706" : skills},
 			type: "POST",
-			dataType: "xml",
-			statusCode: {
-				0: function (){
-					$('.form-container').fadeOut(250);
-					$('#form-completed').delay(250).fadeIn(250);
-				},
-				200: function (){
-					$('.form-container').fadeOut(250);
-					$('#form-completed').delay(250).fadeIn(250);
-				},
-				404: function() {
-					alert( "Sorry! Something went wrong. Please try again. " );
-				}
+			url: '/minno/php/alpha.php',
+			dataType: 'json',
+			data: {name: name, sender: email, code:code},
+			success: function(status) {
+				$('.form-container').fadeOut(250);
+				$('#form-completed').delay(250).fadeIn(250);
+			}, error: function(status) {
+				$('.form-container').fadeOut(250);
+				$('#form-completed').delay(250).fadeIn(250);
 			}
 		});
+	} else {
+		alert('Make sure all the fields are filled out correctly!');
 	}
 });
 
